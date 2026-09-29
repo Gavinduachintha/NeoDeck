@@ -2,7 +2,7 @@
 #include "menu.h"
 #include "wifi_scanner.h"
 #include "modules.h"
-
+#include "settings.h"
 void onButtonAPressed() {
     if (!inMenu) return;
     selected = (selected + 1) % menuSize;
@@ -16,6 +16,8 @@ void onButtonBPressed() {
         case 1:  // WIFI SCAN
             wifiScanner();
             break;
+        case 2:
+            settings();
         default:
             openModule();
             break;
